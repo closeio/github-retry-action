@@ -25042,6 +25042,7 @@ function runAction(inputs) {
                 case 2:
                     if (!(attempt <= inputs.max_attempts)) return [3 /*break*/, 14];
                     (0, core_1.info)("::group::Attempt ".concat(attempt));
+                    (0, core_1.exportVariable)('RETRY_ATTEMPT', "".concat(attempt));
                     _a.label = 3;
                 case 3:
                     _a.trys.push([3, 5, 12, 13]);

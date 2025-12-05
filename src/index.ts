@@ -1,4 +1,4 @@
-import { error, warning, info, debug, setOutput } from '@actions/core';
+import { error, warning, info, debug, setOutput, exportVariable } from '@actions/core';
 import { execSync, spawn } from 'child_process';
 import ms from 'milliseconds';
 import kill from 'tree-kill';
@@ -131,6 +131,7 @@ async function runAction(inputs: Inputs) {
 
   for (let attempt = 1; attempt <= inputs.max_attempts; attempt++) {
     info(`::group::Attempt ${attempt}`);
+    exportVariable('RETRY_ATTEMPT', `${attempt}`);
     try {
       // just keep overwriting attempts output
       setOutput(OUTPUT_TOTAL_ATTEMPTS_KEY, attempt);
