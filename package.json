@@ -52,7 +52,7 @@
     "yaml-lint": "^1.7.0"
   },
   "overrides": {
-    "handlebars": "^4.7.9"
+    "handlebars@>=4.0.0 <4.7.9": "^4.7.9"
   },
   "lint-staged": {
     "**/*.ts": [
